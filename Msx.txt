@@ -1,1 +1,91 @@
-seguinte, ta errado. cria um arquivo chamado "aaa.html" cola la e clica com o botao direito do mouse no arquivo e clica pra abrir no live server pra testar o codigo ate ficar igual o da imagem.
+pede pra completar
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 2 - 6</title>
+   
+</head>
+<style>
+    .q1g{
+        background-color: rgb(91, 178, 207);
+        width: 1000px;
+        height: 300px;
+    }
+    
+    .q2g{
+        background-color: rgb(228, 228, 92);
+        width: 1000px;
+        height: 300px;
+    
+    }
+    .q-grande{
+        display: flex;
+    }
+    
+    .q1p{
+        background-color: rgb(91, 178, 207);
+        width: 100px;
+        height: 100px;
+    }
+    
+    .q2p{
+        background-color: rgb(228, 228, 92);
+        width: 100px;
+        height: 100px;
+    }
+    .q-pequeno{
+       display: flex; 
+    }
+    
+</style>
+<body>
+    <div class="cima">
+        <div class="q-grande">
+            <div class="q1g">
+
+            </div>
+            <div class="q2g">
+
+            </div>
+
+        </div>
+        <div class="q-pequeno">
+            <div class="q1p">
+    
+            </div>
+            <div class="q2p">
+                    
+            </div>
+
+        </div>
+    </div>
+    <div class="meio">
+        <div class="q1m">
+
+        </div>
+        <div class="q2m">
+
+        </div>
+    </div>
+    <div class="baixo">
+        <div class="q1">
+
+        </div>
+        <div class="q2">
+
+        </div>
+        <div class="q3">
+
+        </div>
+        <div class="q4">
+
+        </div>
+        <div class="q5">
+
+        </div>
+    </div>
+    
+</body>
+</html>
