@@ -1,3 +1,1 @@
-vai ver a prova ta bem confuso, da uma olhada q tem 2 6 a que eu te mandei é da parte 2 nao da parte 3
-olha o caralho da 3 nao tem nada a ver com a parte 3 seis cara eu to nervosa
-ta errado, ele fez tipo uma questao totalmente diferente, NAO USA DEEP USA GEMINI PORRA
+seguinte, ta errado. cria um arquivo chamado "aaa.html" cola la e clica com o botao direito do mouse no arquivo e clica pra abrir no live server pra testar o codigo ate ficar igual o da imagem.
