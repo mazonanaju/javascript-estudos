@@ -1,2 +1,3 @@
 coloca pra eu ver e outra NAO ESQUECE DO GIT PULL CAPETA ERA ESSE O ERRO 
 sim, ali do lado da parte ta escrito oq é a linguagem, voce só usa vite pra onde é react.
+VOCE SEMPRE TEM QUE DAR GIT PULL ANTES DE COMMITAR
