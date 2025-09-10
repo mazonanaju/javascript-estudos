@@ -1,208 +1,85 @@
-avaliacao.html
+Arquivo: index.html
 
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Maior, menor, média - Programação de Aplicativos</title>
+    <title>Maior, Menor e Média</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
       body {
-        background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
+        font-family: Arial, sans-serif;
+        margin: 20px;
       }
-
-      .container {
-        background-color: white;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        width: 100%;
-        max-width: 500px;
-        padding: 30px;
+      input {
+        margin-bottom: 10px;
       }
-
-      h1 {
-        color: #1a2a6c;
-        text-align: center;
-        margin-bottom: 20px;
-        font-size: 24px;
-      }
-
-      .description {
-        color: #444;
-        text-align: center;
-        margin-bottom: 25px;
-      }
-
-      .input-group {
-        margin-bottom: 20px;
-      }
-
-      .input-group label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: 600;
-        color: #333;
-      }
-
-      .input-group input {
-        width: 100%;
-        padding: 12px 15px;
-        border: 2px solid #ddd;
-        border-radius: 8px;
-        font-size: 16px;
-        transition: border-color 0.3s;
-      }
-
-      .input-group input:focus {
-        border-color: #4caf50;
-        outline: none;
-      }
-
-      button {
-        background: linear-gradient(to right, #4caf50, #2e8b57);
-        color: white;
-        border: none;
-        padding: 14px 20px;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        width: 100%;
-        transition: transform 0.2s, box-shadow 0.2s;
-        margin-top: 10px;
-      }
-
-      button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      button:active {
-        transform: translateY(0);
-      }
-
-      .resultado {
-        margin-top: 30px;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: #f9f9f9;
-        border-left: 5px solid #4caf50;
-      }
-
-      .resultado h3 {
-        color: #333;
-        margin-bottom: 15px;
-        font-size: 20px;
-        text-align: center;
-      }
-
-      .resultado p {
-        margin: 10px 0;
-        font-size: 18px;
-        color: #555;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .resultado span {
-        font-weight: 600;
-        color: #2e8b57;
-      }
-
-      .footer {
-        margin-top: 25px;
-        color: #777;
-        font-size: 14px;
-        text-align: center;
+      #resultados {
+        margin-top: 20px;
+        font-size: 1.1em;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1>Análise de Números</h1>
-      <p class="description">
-        Digite três números para encontrar o maior, o menor e calcular a média:
-      </p>
+    <h1>Calcular Números</h1>
 
-      <div class="input-group">
-        <label for="numero1">Primeiro número:</label>
-        <input
-          type="number"
-          id="numero1"
-          placeholder="Digite o primeiro número"
-        />
-      </div>
+    <p>Digite três números para encontrar o maior, o menor e a média.</p>
 
-      <div class="input-group">
-        <label for="numero2">Segundo número:</label>
-        <input
-          type="number"
-          id="numero2"
-          placeholder="Digite o segundo número"
-        />
-      </div>
+    <label for="num1">Primeiro número:</label>
+    <input type="number" id="num1" /><br />
 
-      <div class="input-group">
-        <label for="numero3">Terceiro número:</label>
-        <input
-          type="number"
-          id="numero3"
-          placeholder="Digite o terceiro número"
-        />
-      </div>
+    <label for="num2">Segundo número:</label>
+    <input type="number" id="num2" /><br />
 
-      <button onclick="calcular()">Calcular</button>
+    <label for="num3">Terceiro número:</label>
+    <input type="number" id="num3" /><br />
 
-      <div id="resultado" class="resultado">
-        <h3>Resultados:</h3>
-        <p>Maior número: <span id="maior">-</span></p>
-        <p>Menor número: <span id="menor">-</span></p>
-        <p>Média: <span id="media">-</span></p>
-      </div>
+    <button onclick="calcular()">Calcular</button>
 
-      <div class="footer">
-        <p>Programação de Aplicativos - Avaliação I</p>
-      </div>
+    <div id="resultados">
+      <p id="maior"></p>
+      <p id="menor"></p>
+      <p id="media"></p>
     </div>
 
     <script>
+      // O script JavaScript fica aqui, no final do corpo do HTML
       function calcular() {
-        // Obter os valores dos inputs
-        const num1 = parseFloat(document.getElementById("numero1").value);
-        const num2 = parseFloat(document.getElementById("numero2").value);
-        const num3 = parseFloat(document.getElementById("numero3").value);
+        // Pega os valores dos inputs e converte para número
+        const num1 = Number(document.getElementById("num1").value);
+        const num2 = Number(document.getElementById("num2").value);
+        const num3 = Number(document.getElementById("num3").value);
 
-        // Validar se todos os campos foram preenchidos
-        if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+        // Valida se os valores são números válidos
+        if (
+          isNaN(num1) ||
+          isNaN(num2) ||
+          isNaN(num3) ||
+          document.getElementById("num1").value === "" ||
+          document.getElementById("num2").value === "" ||
+          document.getElementById("num3").value === ""
+        ) {
           alert("Por favor, preencha todos os campos com números válidos.");
           return;
         }
 
-        // Encontrar o maior número
+        // Encontra o maior número usando Math.max()
         const maior = Math.max(num1, num2, num3);
+        document.getElementById(
+          "maior"
+        ).textContent = `O maior número é: ${maior}`;
 
-        // Encontrar o menor número
+        // Encontra o menor número usando Math.min()
         const menor = Math.min(num1, num2, num3);
+        document.getElementById(
+          "menor"
+        ).textContent = `O menor número é: ${menor}`;
 
-        // Calcular a média
+        // Calcula a média e formata com 2 casas decimais
         const media = (num1 + num2 + num3) / 3;
-
-        // Exibir os resultados
-        document.getElementById("maior").textContent = maior;
-        document.getElementById("menor").textContent = menor;
-        document.getElementById("media").textContent = media.toFixed(2);
+        document.getElementById(
+          "media"
+        ).textContent = `A média dos três números é: ${media.toFixed(2)}`;
       }
     </script>
   </body>
