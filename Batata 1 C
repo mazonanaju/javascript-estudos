@@ -1,17 +1,5 @@
+Questão 3: Diferença entre git commit e git push
 
-3 - Qual a diferença entre git commit e git push?
-O git commit e o git push são comandos essenciais no fluxo de trabalho do Git, mas eles atuam em níveis diferentes:
+git commit: Salva as alterações feitas no seu computador local. É como tirar uma "foto" do seu código em um momento específico.
 
-git commit:
-
-O que faz: Grava as mudanças que você fez (e adicionou com git add) no seu repositório local.
-
-Analogia: Pense no commit como "tirar uma foto" do estado atual do seu código. Essa foto é um instantâneo que fica armazenado no seu próprio computador. Cada commit tem uma mensagem que descreve as alterações feitas.
-
-git push:
-
-O que faz: Envia os commits do seu repositório local para um repositório remoto (como o GitHub, GitLab ou Bitbucket).
-
-Analogia: O push é como "subir" as fotos que você tirou para a nuvem. Isso torna suas mudanças acessíveis a outros colaboradores e as salva em um servidor remoto, criando um backup.
-
-Em resumo: Primeiro, você commita para registrar as mudanças localmente. Depois, você dá push para compartilhar essas mudanças com o mundo. O commit é uma operação local, enquanto o push é uma operação de rede.
+git push: Envia as alterações salvas (os commits) do seu computador para um repositório remoto, como o GitHub. Isso torna seu trabalho visível para outras pessoas e cria um backup.
