@@ -1,289 +1,127 @@
-projeto-design/ └── design.html
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Avaliação I - Programação de Aplicativos</title>
+    <title>Geometric Design</title>
     <style>
-      /* Estilos gerais */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
       body {
-        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-        color: #333;
-        line-height: 1.6;
-        min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 20px;
+        min-height: 100vh;
+        margin: 0;
+        background-color: white;
+        overflow: hidden; /* Prevent scrollbars if content is slightly off */
       }
 
       .container {
+        width: 600px; /* Adjust overall width as needed */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .top-row {
+        display: flex;
         width: 100%;
-        max-width: 1200px;
-        background-color: rgba(255, 255, 255, 0.95);
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        overflow: hidden;
-      }
-
-      /* Cabeçalho */
-      header {
-        background: linear-gradient(to right, #4caf50, #2e8b57);
-        color: white;
-        padding: 30px;
-        text-align: center;
-      }
-
-      header h1 {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-      }
-
-      header p {
-        font-size: 1.2rem;
-        opacity: 0.9;
-      }
-
-      /* Conteúdo principal */
-      main {
-        padding: 40px;
-      }
-
-      .content-section {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 40px;
-        margin-bottom: 50px;
-        align-items: center;
-      }
-
-      .text-content {
-        flex: 1;
-        min-width: 300px;
-      }
-
-      .text-content h2 {
-        color: #2c3e50;
-        margin-bottom: 20px;
-        font-size: 2rem;
-        border-bottom: 3px solid #4caf50;
-        padding-bottom: 10px;
-      }
-
-      .text-content p {
-        margin-bottom: 15px;
-        font-size: 1.1rem;
-        color: #34495e;
-      }
-
-      .text-content ul {
-        margin: 20px 0;
-        padding-left: 20px;
-      }
-
-      .text-content li {
-        margin-bottom: 10px;
-        font-size: 1.1rem;
-      }
-
-      .image-content {
-        flex: 1;
-        min-width: 300px;
-        display: flex;
         justify-content: center;
-        align-items: center;
+        margin-bottom: 20px; /* Space between top and middle */
       }
 
-      .placeholder-image {
+      .top-left-blue {
+        background-color: #00bfff; /* DeepSkyBlue */
+        width: 45%; /* Approximately half */
+        height: 100px; /* Height of the main rectangles */
+        position: relative;
+        margin-right: 2%; /* Gap between the two large rectangles */
+      }
+
+      .top-left-blue::before {
+        content: "";
+        background-color: yellow;
+        width: 30px; /* Size of the small yellow square */
+        height: 30px;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .top-right-yellow {
+        background-color: yellow;
+        width: 45%; /* Approximately half */
+        height: 100px;
+        position: relative;
+      }
+
+      .top-right-yellow::before {
+        content: "";
+        background-color: #00bfff; /* DeepSkyBlue */
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .middle-connector {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
-        height: 300px;
-        background: linear-gradient(45deg, #3498db, #9b59b6);
-        border-radius: 10px;
+      }
+
+      .yellow-connector {
+        background-color: yellow;
+        width: 50px; /* Width of the yellow connector */
+        height: 50px; /* Height of the yellow connector */
+        margin-top: -20px; /* Overlap with top section for visual connection */
+        z-index: 1; /* Ensure it's above the blue/yellow top */
+      }
+
+      .blue-connector {
+        background-color: #00bfff; /* DeepSkyBlue */
+        width: 50px; /* Width of the blue connector */
+        height: 50px; /* Height of the blue connector */
+        margin-top: 0px; /* Space from yellow connector */
+        margin-bottom: 20px; /* Space to bottom row */
+      }
+
+      .bottom-row {
+        background-color: #00bfff; /* DeepSkyBlue */
+        width: 92%; /* Match the combined width of top elements approximately */
+        height: 100px;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
-        color: white;
-        font-size: 1.5rem;
-        font-weight: bold;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        position: relative;
       }
 
-      /* Seção de características */
-      .features {
-        margin-bottom: 40px;
-      }
-
-      .features h2 {
-        text-align: center;
-        color: #2c3e50;
-        margin-bottom: 30px;
-        font-size: 2rem;
-      }
-
-      .features-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        justify-content: center;
-      }
-
-      .feature-card {
-        flex: 1;
-        min-width: 250px;
-        max-width: 350px;
-        background-color: white;
-        padding: 25px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        text-align: center;
-        transition: transform 0.3s, box-shadow 0.3s;
-      }
-
-      .feature-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      }
-
-      .feature-icon {
-        font-size: 3rem;
-        margin-bottom: 20px;
-      }
-
-      .feature-card h3 {
-        color: #2c3e50;
-        margin-bottom: 15px;
-        font-size: 1.5rem;
-      }
-
-      .feature-card p {
-        color: #7f8c8d;
-        line-height: 1.5;
-      }
-
-      /* Rodapé */
-      footer {
-        background-color: #2c3e50;
-        color: white;
-        text-align: center;
-        padding: 20px;
-      }
-
-      footer p {
-        margin: 5px 0;
-      }
-
-      /* Responsividade */
-      @media (max-width: 768px) {
-        header h1 {
-          font-size: 2rem;
-        }
-
-        header p {
-          font-size: 1rem;
-        }
-
-        .text-content h2 {
-          font-size: 1.7rem;
-        }
-
-        .features h2 {
-          font-size: 1.7rem;
-        }
-
-        .content-section {
-          flex-direction: column;
-        }
-
-        .feature-card {
-          min-width: 100%;
-        }
-      }
-
-      @media (max-width: 480px) {
-        main {
-          padding: 20px;
-        }
-
-        header {
-          padding: 20px;
-        }
-
-        .text-content h2 {
-          font-size: 1.5rem;
-        }
+      .bottom-row .yellow-square {
+        background-color: yellow;
+        width: 30px;
+        height: 30px;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <header>
-        <h1>Avaliação I de Programação de Aplicativos</h1>
-        <p>Desenvolvimento de Design com HTML e CSS</p>
-      </header>
-
-      <main>
-        <section class="content-section">
-          <div class="text-content">
-            <h2>Design Moderno e Responsivo</h2>
-            <p>
-              Esta página foi desenvolvida como parte da Avaliação I de
-              Programação de Aplicativos, demonstrando habilidades em HTML e
-              CSS.
-            </p>
-            <p>
-              O design incorpora princípios modernos de UI/UX, com layout
-              responsivo que se adapta a diferentes tamanhos de tela.
-            </p>
-            <ul>
-              <li>Layout limpo e organizado</li>
-              <li>Cores harmoniosas e contrastantes</li>
-              <li>Tipografia legível e hierarquia visual clara</li>
-              <li>Elementos visuais atraentes</li>
-            </ul>
-          </div>
-          <div class="image-content">
-            <div class="placeholder-image">
-              <span>Imagem Ilustrativa</span>
-            </div>
-          </div>
-        </section>
-
-        <section class="features">
-          <h2>Características do Design</h2>
-          <div class="features-grid">
-            <div class="feature-card">
-              <div class="feature-icon">🎨</div>
-              <h3>Estética Visual</h3>
-              <p>Design atraente com cores bem escolhidas e harmoniosas.</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon">📱</div>
-              <h3>Responsividade</h3>
-              <p>Adapta-se perfeitamente a dispositivos móveis e desktop.</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon">⚡</div>
-              <h3>Performance</h3>
-              <p>Código otimizado para carregamento rápido e eficiente.</p>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer>
-        <p>Programação de Aplicativos - Avaliação I</p>
-        <p>Desenvolvido com HTML e CSS</p>
-      </footer>
+      <div class="top-row">
+        <div class="top-left-blue"></div>
+        <div class="top-right-yellow"></div>
+      </div>
+      <div class="middle-connector">
+        <div class="yellow-connector"></div>
+        <div class="blue-connector"></div>
+      </div>
+      <div class="bottom-row">
+        <div class="yellow-square"></div>
+        <div class="yellow-square"></div>
+        <div class="yellow-square"></div>
+        <div class="yellow-square"></div>
+      </div>
     </div>
   </body>
 </html>
