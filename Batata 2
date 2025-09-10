@@ -12,11 +12,10 @@
         min-height: 100vh;
         margin: 0;
         background-color: white;
-        overflow: hidden; /* Prevent scrollbars if content is slightly off */
       }
 
       .container {
-        width: 600px; /* Adjust overall width as needed */
+        width: 600px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -25,22 +24,21 @@
       .top-row {
         display: flex;
         width: 100%;
-        justify-content: center;
-        margin-bottom: 20px; /* Space between top and middle */
+        justify-content: space-between;
+        margin-bottom: 0;
       }
 
       .top-left-blue {
-        background-color: #00bfff; /* DeepSkyBlue */
-        width: 45%; /* Approximately half */
-        height: 100px; /* Height of the main rectangles */
+        background-color: #00bfff;
+        width: 290px;
+        height: 100px;
         position: relative;
-        margin-right: 2%; /* Gap between the two large rectangles */
       }
 
       .top-left-blue::before {
         content: "";
         background-color: yellow;
-        width: 30px; /* Size of the small yellow square */
+        width: 30px;
         height: 30px;
         position: absolute;
         left: 20px;
@@ -50,14 +48,14 @@
 
       .top-right-yellow {
         background-color: yellow;
-        width: 45%; /* Approximately half */
+        width: 290px;
         height: 100px;
         position: relative;
       }
 
       .top-right-yellow::before {
         content: "";
-        background-color: #00bfff; /* DeepSkyBlue */
+        background-color: #00bfff;
         width: 30px;
         height: 30px;
         position: absolute;
@@ -66,37 +64,34 @@
         transform: translateY(-50%);
       }
 
-      .middle-connector {
+      .connector-section {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
+        margin: 0;
       }
 
       .yellow-connector {
         background-color: yellow;
-        width: 50px; /* Width of the yellow connector */
-        height: 50px; /* Height of the yellow connector */
-        margin-top: -20px; /* Overlap with top section for visual connection */
-        z-index: 1; /* Ensure it's above the blue/yellow top */
+        width: 50px;
+        height: 50px;
       }
 
       .blue-connector {
-        background-color: #00bfff; /* DeepSkyBlue */
-        width: 50px; /* Width of the blue connector */
-        height: 50px; /* Height of the blue connector */
-        margin-top: 0px; /* Space from yellow connector */
-        margin-bottom: 20px; /* Space to bottom row */
+        background-color: #00bfff;
+        width: 50px;
+        height: 50px;
       }
 
       .bottom-row {
-        background-color: #00bfff; /* DeepSkyBlue */
-        width: 92%; /* Match the combined width of top elements approximately */
+        background-color: #00bfff;
+        width: 580px;
         height: 100px;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        position: relative;
+        margin-top: 0;
       }
 
       .bottom-row .yellow-square {
@@ -112,7 +107,7 @@
         <div class="top-left-blue"></div>
         <div class="top-right-yellow"></div>
       </div>
-      <div class="middle-connector">
+      <div class="connector-section">
         <div class="yellow-connector"></div>
         <div class="blue-connector"></div>
       </div>
