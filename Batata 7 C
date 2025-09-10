@@ -1,0 +1,29 @@
+
+Pasta: src/components/
+Nome do arquivo: AlternaVisibilidade.jsx
+
+import { useState } from 'react';
+
+function AlternaVisibilidade() {
+  // Inicializa o estado 'isVisible' como true (visível por padrão)
+  const [isVisible, setIsVisible] = useState(true);
+
+  // Função para alternar a visibilidade
+  const handleToggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+
+  return (
+    <div>
+      <h2>Alternar Visibilidade</h2>
+      <button onClick={handleToggleVisibility}>
+        {isVisible ? 'Esconder' : 'Mostrar'}
+      </button>
+
+      {/* Renderização condicional: o parágrafo só é exibido se 'isVisible' for true */}
+      {isVisible && <p>Este elemento está visível!</p>}
+    </div>
+  );
+}
+
+export default AlternaVisibilidade;
