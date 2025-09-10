@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometric Design</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: white;
+            overflow: hidden; /* Prevent scrollbars if content is slightly off */
+        }
+
+        .container {
+            width: 600px; /* Adjust overall width as needed */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .top-row {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 20px; /* Space between top and middle */
+        }
+
+        .top-left-blue {
+            background-color: #00BFFF; /* DeepSkyBlue */
+            width: 45%; /* Approximately half */
+            height: 100px; /* Height of the main rectangles */
+            position: relative;
+            margin-right: 2%; /* Gap between the two large rectangles */
+        }
+
+        .top-left-blue::before {
+            content: '';
+            background-color: yellow;
+            width: 30px; /* Size of the small yellow square */
+            height: 30px;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .top-right-yellow {
+            background-color: yellow;
+            width: 45%; /* Approximately half */
+            height: 100px;
+            position: relative;
+        }
+
+        .top-right-yellow::before {
+            content: '';
+            background-color: #00BFFF; /* DeepSkyBlue */
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .middle-connector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .yellow-connector {
+            background-color: yellow;
+            width: 50px; /* Width of the yellow connector */
+            height: 50px; /* Height of the yellow connector */
+            margin-top: -20px; /* Overlap with top section for visual connection */
+            z-index: 1; /* Ensure it's above the blue/yellow top */
+        }
+
+        .blue-connector {
+            background-color: #00BFFF; /* DeepSkyBlue */
+            width: 50px; /* Width of the blue connector */
+            height: 50px; /* Height of the blue connector */
+            margin-top: 0px; /* Space from yellow connector */
+            margin-bottom: 20px; /* Space to bottom row */
+        }
+
+        .bottom-row {
+            background-color: #00BFFF; /* DeepSkyBlue */
+            width: 92%; /* Match the combined width of top elements approximately */
+            height: 100px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+        }
+
+        .bottom-row .yellow-square {
+            background-color: yellow;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-row">
+            <div class="top-left-blue"></div>
+            <div class="top-right-yellow"></div>
+        </div>
+        <div class="middle-connector">
+            <div class="yellow-connector"></div>
+            <div class="blue-connector"></div>
+        </div>
+        <div class="bottom-row">
+            <div class="yellow-square"></div>
+            <div class="yellow-square"></div>
+            <div class="yellow-square"></div>
+            <div class="yellow-square"></div>
+        </div>
+    </div>
+</body>
+</html>
