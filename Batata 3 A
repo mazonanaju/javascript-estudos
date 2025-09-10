@@ -1,11 +1,11 @@
-projeto-design/ └── design.html
+avaliacao.html
 
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Avaliação I - Programação de Aplicativos</title>
+    <title>Maior, menor, média - Programação de Aplicativos</title>
     <style>
       * {
         margin: 0;
@@ -16,7 +16,6 @@ projeto-design/ └── design.html
 
       body {
         background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-        color: #333;
         min-height: 100vh;
         display: flex;
         justify-content: center;
@@ -25,251 +24,186 @@ projeto-design/ └── design.html
       }
 
       .container {
-        width: 100%;
-        max-width: 1000px;
         background-color: white;
         border-radius: 15px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        overflow: hidden;
+        width: 100%;
+        max-width: 500px;
+        padding: 30px;
       }
 
-      header {
+      h1 {
+        color: #1a2a6c;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      .description {
+        color: #444;
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+      }
+
+      .input-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+      }
+
+      .input-group input:focus {
+        border-color: #4caf50;
+        outline: none;
+      }
+
+      button {
         background: linear-gradient(to right, #4caf50, #2e8b57);
         color: white;
-        padding: 30px;
-        text-align: center;
-      }
-
-      header h1 {
-        font-size: 2.2rem;
-        margin-bottom: 10px;
-      }
-
-      header p {
-        font-size: 1.1rem;
-        opacity: 0.9;
-      }
-
-      main {
-        padding: 30px;
-      }
-
-      .content-section {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        margin-bottom: 40px;
-      }
-
-      .text-content {
-        flex: 1;
-        min-width: 300px;
-      }
-
-      .text-content h2 {
-        color: #2c3e50;
-        margin-bottom: 20px;
-        font-size: 1.8rem;
-        border-bottom: 3px solid #4caf50;
-        padding-bottom: 10px;
-      }
-
-      .text-content p {
-        margin-bottom: 15px;
-        font-size: 1.1rem;
-        color: #34495e;
-        line-height: 1.6;
-      }
-
-      .text-content ul {
-        margin: 20px 0;
-        padding-left: 20px;
-      }
-
-      .text-content li {
-        margin-bottom: 10px;
-        font-size: 1.1rem;
-      }
-
-      .image-content {
-        flex: 1;
-        min-width: 300px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .placeholder-image {
+        border: none;
+        padding: 14px 20px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
         width: 100%;
-        height: 250px;
-        background: linear-gradient(45deg, #3498db, #9b59b6);
-        border-radius: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 1.3rem;
-        font-weight: bold;
+        transition: transform 0.2s, box-shadow 0.2s;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
 
-      .features {
-        margin-bottom: 30px;
+      button:active {
+        transform: translateY(0);
       }
 
-      .features h2 {
-        text-align: center;
-        color: #2c3e50;
-        margin-bottom: 25px;
-        font-size: 1.8rem;
-      }
-
-      .features-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-      }
-
-      .feature-card {
-        flex: 1;
-        min-width: 250px;
-        max-width: 300px;
-        background-color: #f9f9f9;
+      .resultado {
+        margin-top: 30px;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        text-align: center;
-        transition: transform 0.3s;
+        background-color: #f9f9f9;
+        border-left: 5px solid #4caf50;
       }
 
-      .feature-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .feature-icon {
-        font-size: 2.5rem;
+      .resultado h3 {
+        color: #333;
         margin-bottom: 15px;
-      }
-
-      .feature-card h3 {
-        color: #2c3e50;
-        margin-bottom: 12px;
-        font-size: 1.4rem;
-      }
-
-      .feature-card p {
-        color: #7f8c8d;
-        line-height: 1.5;
-      }
-
-      footer {
-        background-color: #2c3e50;
-        color: white;
+        font-size: 20px;
         text-align: center;
-        padding: 20px;
       }
 
-      footer p {
-        margin: 5px 0;
+      .resultado p {
+        margin: 10px 0;
+        font-size: 18px;
+        color: #555;
+        display: flex;
+        justify-content: space-between;
       }
 
-      @media (max-width: 768px) {
-        header h1 {
-          font-size: 1.8rem;
-        }
+      .resultado span {
+        font-weight: 600;
+        color: #2e8b57;
+      }
 
-        .text-content h2,
-        .features h2 {
-          font-size: 1.5rem;
-        }
-
-        .content-section {
-          flex-direction: column;
-        }
+      .footer {
+        margin-top: 25px;
+        color: #777;
+        font-size: 14px;
+        text-align: center;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <header>
-        <h1>Avaliação I de Programação de Aplicativos</h1>
-        <p>Desenvolvimento de Design com HTML e CSS</p>
-      </header>
+      <h1>Análise de Números</h1>
+      <p class="description">
+        Digite três números para encontrar o maior, o menor e calcular a média:
+      </p>
 
-      <main>
-        <section class="content-section">
-          <div class="text-content">
-            <h2>Design Moderno e Responsivo</h2>
-            <p>
-              Esta página foi desenvolvida como parte da Avaliação I de
-              Programação de Aplicativos, demonstrando habilidades em HTML e
-              CSS.
-            </p>
-            <p>
-              O design incorpora princípios modernos de UI/UX, com layout
-              responsivo que se adapta a diferentes tamanhos de tela.
-            </p>
-            <ul>
-              <li>Layout limpo e organizado</li>
-              <li>Cores harmoniosas e contrastantes</li>
-              <li>Tipografia legível e hierarquia visual clara</li>
-              <li>Elementos visuais atraentes</li>
-            </ul>
-          </div>
-          <div class="image-content">
-            <div class="placeholder-image">
-              <span>Imagem Ilustrativa</span>
-            </div>
-          </div>
-        </section>
+      <div class="input-group">
+        <label for="numero1">Primeiro número:</label>
+        <input
+          type="number"
+          id="numero1"
+          placeholder="Digite o primeiro número"
+        />
+      </div>
 
-        <section class="features">
-          <h2>Características do Design</h2>
-          <div class="features-grid">
-            <div class="feature-card">
-              <div class="feature-icon">🎨</div>
-              <h3>Estética Visual</h3>
-              <p>Design atraente com cores bem escolhidas e harmoniosas.</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon">📱</div>
-              <h3>Responsividade</h3>
-              <p>Adapta-se perfeitamente a dispositivos móveis e desktop.</p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon">⚡</div>
-              <h3>Performance</h3>
-              <p>Código otimizado para carregamento rápido e eficiente.</p>
-            </div>
-          </div>
-        </section>
-      </main>
+      <div class="input-group">
+        <label for="numero2">Segundo número:</label>
+        <input
+          type="number"
+          id="numero2"
+          placeholder="Digite o segundo número"
+        />
+      </div>
 
-      <footer>
+      <div class="input-group">
+        <label for="numero3">Terceiro número:</label>
+        <input
+          type="number"
+          id="numero3"
+          placeholder="Digite o terceiro número"
+        />
+      </div>
+
+      <button onclick="calcular()">Calcular</button>
+
+      <div id="resultado" class="resultado">
+        <h3>Resultados:</h3>
+        <p>Maior número: <span id="maior">-</span></p>
+        <p>Menor número: <span id="menor">-</span></p>
+        <p>Média: <span id="media">-</span></p>
+      </div>
+
+      <div class="footer">
         <p>Programação de Aplicativos - Avaliação I</p>
-        <p>Desenvolvido com HTML e CSS</p>
-      </footer>
+      </div>
     </div>
 
     <script>
-      // Efeito de digitação no título
-      document.addEventListener("DOMContentLoaded", function () {
-        const title = document.querySelector("header h1");
-        const originalText = title.textContent;
-        title.textContent = "";
+      function calcular() {
+        // Obter os valores dos inputs
+        const num1 = parseFloat(document.getElementById("numero1").value);
+        const num2 = parseFloat(document.getElementById("numero2").value);
+        const num3 = parseFloat(document.getElementById("numero3").value);
 
-        let i = 0;
-        const typeWriter = () => {
-          if (i < originalText.length) {
-            title.textContent += originalText.charAt(i);
-            i++;
-            setTimeout(typeWriter, 50);
-          }
-        };
+        // Validar se todos os campos foram preenchidos
+        if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+          alert("Por favor, preencha todos os campos com números válidos.");
+          return;
+        }
 
-        typeWriter();
-      });
+        // Encontrar o maior número
+        const maior = Math.max(num1, num2, num3);
+
+        // Encontrar o menor número
+        const menor = Math.min(num1, num2, num3);
+
+        // Calcular a média
+        const media = (num1 + num2 + num3) / 3;
+
+        // Exibir os resultados
+        document.getElementById("maior").textContent = maior;
+        document.getElementById("menor").textContent = menor;
+        document.getElementById("media").textContent = media.toFixed(2);
+      }
     </script>
   </body>
 </html>
