@@ -1,16 +1,3 @@
-4 - O que são conventional commits e conventional branches? Para qual finalidade eles seriam utilizados e resolveriam qual tipo de problema?
-Conventional Commits (Commits Convencionais):
+O que são: São convenções de nomenclatura para commits e branches, usando padrões fixos como feat/nova-feature ou fix: corrige-bug.
 
-O que são: É uma convenção de escrita de mensagens de commit que segue uma estrutura padronizada, geralmente no formato <tipo>(<escopo>): <descrição>.
-
-Exemplo: feat(auth): adiciona login de usuário ou fix(bug): corrige erro de validação de formulário.
-
-Finalidade e problema que resolve: A principal finalidade é padronizar o histórico do projeto, tornando-o mais legível e fácil de entender. Isso resolve o problema de mensagens de commit inconsistentes e confusas, facilitando a identificação rápida do tipo de alteração (nova funcionalidade, correção de bug, refatoração, etc.). Isso também permite a automação de ferramentas, como a geração de changelogs (listas de mudanças) de forma automática.
-
-Conventional Branches (Branches Convencionais):
-
-O que são: É uma convenção de nomenclatura para as branches do Git. Elas costumam seguir um padrão como <tipo>/<descrição>, onde o tipo indica a natureza do trabalho.
-
-Exemplos: feature/login-page, bugfix/fix-user-profile, hotfix/critical-error.
-
-Finalidade e problema que resolve: Assim como os commits, a finalidade é organizar e padronizar o fluxo de trabalho. Isso resolve o problema da desorganização e da dificuldade de entender o propósito de cada branch em um projeto com vários desenvolvedores. A convenção deixa claro para todos qual o objetivo da branch antes mesmo de abri-la.
+Para que servem: Ajudam a organizar e padronizar o histórico do projeto, tornando-o mais fácil de ler e entender. Facilitam o trabalho em equipe, permitem a automação de processos (como a criação de changelogs) e resolvem o problema da desorganização e falta de clareza em projetos grandes.
