@@ -1,42 +1,15 @@
-5 - Você clonou um repositório remoto, irá criar uma branch chamada feature/login para fazer alguns commits. Escreva os comandos e passo a passo necessários para:
-Aqui estão os comandos e a sequência de passos para realizar a tarefa:
+Questão 5: Criar uma branch e enviar alterações
 
-1. Clonar o repositório remoto:
+Este é o fluxo de trabalho passo a passo para clonar um repositório, criar uma nova branch (feature/login), fazer alterações e enviá-las:
 
-Comando: git clone <URL_do_repositorio>
+Clonar: Use git clone <URL> para copiar o repositório para o seu computador.
 
-Passo: Este comando copia o repositório remoto para o seu computador. A URL pode ser encontrada na página do repositório (ex: GitHub).
+Criar branch: Use git checkout -b feature/login para criar e já entrar na nova branch.
 
-2. Navegar para a pasta do repositório (se necessário):
+Fazer alterações: Edite os arquivos do seu projeto.
 
-Comando: cd <nome_do_repositorio>
+Adicionar: Use git add . para preparar os arquivos para o commit.
 
-Passo: Após o clone, entre na pasta que foi criada.
+Commitar: Use git commit -m "mensagem" para salvar as alterações localmente.
 
-3. Criar uma nova branch e mudar para ela:
-
-Comando: git checkout -b feature/login
-
-Passo: Este comando cria a branch feature/login e, ao mesmo tempo, muda você para ela, permitindo que você trabalhe nela. O -b é um atalho para criar e mudar de branch em um só comando.
-
-4. Fazer as alterações no código:
-
-Passo: Realize todas as modificações nos arquivos do projeto para desenvolver a funcionalidade de login.
-
-5. Adicionar as mudanças para o staging area:
-
-Comando: git add . (para adicionar todos os arquivos alterados) ou git add <nome_do_arquivo> (para adicionar arquivos específicos).
-
-Passo: Este comando "prepara" as suas alterações para serem incluídas no próximo commit.
-
-6. Fazer o commit das mudanças:
-
-Comando: git commit -m "feat(login): adiciona a funcionalidade de login"
-
-Passo: Grava as alterações no repositório local. A mensagem do commit deve ser clara e descritiva.
-
-7. Enviar a branch para o repositório remoto:
-
-Comando: git push origin feature/login
-
-Passo: Este comando envia a sua nova branch (feature/login) e os commits que você fez nela para o repositório remoto. O origin é o nome padrão do repositório remoto
+Enviar: Use git push origin feature/login para enviar a nova branch e os commits para o repositório remoto.
