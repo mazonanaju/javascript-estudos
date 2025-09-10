@@ -1,7 +1,8 @@
+coloca pra eu ver e outra NAO ESQUECE DO GIT PULL CAPETA ERA ESSE O ERRO 
+sim, ali do lado da parte ta escrito oq é a linguagem, voce só usa vite pra onde é react.
+VOCE SEMPRE TEM QUE DAR GIT PULL ANTES DE COMMITAR
+só q vc nao sabe quando eu mando, ai n sabe quando q tem que atualizar o pull garante que ta atualizado.
 
-index.html` - Página principal com a exibição dos três códigos e resultados da análise
-css/style.css` - Estilos para a página
-js/codigo1.js` - Primeiro código (abordagem direta)
-js/codigo2.js` - Segundo código (abordagem com array)
-js/codigo3.js` - Terceiro código (abordagem com loop)
-js/analise.js` - Script que realiza a análise dos códigos
+da 1 eu preciso so da 3 da 4 e da 5 é teorico nao tem linguagem. 
+faz todas, eu fiz da 1 a A e a B, o resto eu preciso de tudo se nao nao vai dar tempo
+mandei no whats sua anta
