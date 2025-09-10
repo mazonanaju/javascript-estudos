@@ -1,3 +1,1 @@
-
-vontade de chorar
- 
+o att é um comentario, pode por qualquer coisa la dentro. o que ta dentro das aspas pode ser qualquer coisa, voce salvou o arquivo, ou deu git pull? sempre que eu te mando algo vc tem que dar git pull no terminal
