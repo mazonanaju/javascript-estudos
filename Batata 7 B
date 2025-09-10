@@ -1,0 +1,30 @@
+
+Pasta: src/components/
+Arquivo: TextoEmTempoReal.jsx
+
+import { useState } from 'react';
+
+function TextoEmTempoReal() {
+  // Inicializa o estado 'text' com uma string vazia
+  const [text, setText] = useState('');
+
+  // Função para atualizar o estado com o valor do input
+  const handleInputChange = (event) => {
+    setText(event.target.value);
+  };
+
+  return (
+    <div>
+      <h2>Exibição de Texto em Tempo Real</h2>
+      <input
+        type="text"
+        placeholder="Digite algo..."
+        value={text}
+        onChange={handleInputChange}
+      />
+      <p>Você digitou: {text}</p>
+    </div>
+  );
+}
+
+export default TextoEmTempoReal;
