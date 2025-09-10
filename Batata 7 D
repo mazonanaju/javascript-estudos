@@ -1,0 +1,22 @@
+
+Pasta: src/
+Nome do arquivo: App.jsx
+
+import Contador from './components/Contador';
+import TextoEmTempoReal from './components/TextoEmTempoReal';
+import AlternaVisibilidade from './components/AlternaVisibilidade';
+
+function App() {
+  return (
+    <div>
+      <h1>Exercícios React Básico</h1>
+      <Contador />
+      <hr /> {/* Linha divisória para separar os exemplos */}
+      <TextoEmTempoReal />
+      <hr />
+      <AlternaVisibilidade />
+    </div>
+  );
+}
+
+export default App;
